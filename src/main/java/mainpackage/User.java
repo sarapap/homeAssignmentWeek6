@@ -1,3 +1,5 @@
+package mainpackage;
+
 public class User {
 
     private String name;
@@ -5,5 +7,10 @@ public class User {
     // Getter method
     public String getName() {
         return name;
+    }
+
+    // Setter method
+    public void setName(String name) {
+        this.name = name;
     }
 }

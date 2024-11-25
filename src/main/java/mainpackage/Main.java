@@ -1,21 +1,27 @@
+package mainpackage;
+
 public class Main {
 
     public static void main(String[] args) {
-        // Example 1: Bad practice - unused variable
-        int unusedVariable = 5;
-
-        // Example 2: Performance issue - redundant method call in loop
-        for (int i = 0; i < 1000; i++) {
-            System.out.println(i);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <= 999; i++) {
+            sb.append(i).append("\n");
         }
+        System.out.println(sb);
 
-        // Example 3: PMD - Simple rule violation (using an instance variable without initialization)
         User user = new User();
+        user.setName("Sara");
         System.out.println(user.getName());
+
+        divide(10, 2);
+        divide(10, 0);
     }
 
-    // Example of a method with a bug (FindBugs will flag this)
     public static void divide(int a, int b) {
+        if (b == 0) {
+            System.out.println("Nollalla ei voi jakaa.");
+            return;
+        }
         System.out.println(a / b);
     }
 }
